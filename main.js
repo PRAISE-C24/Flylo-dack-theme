@@ -1,6 +1,7 @@
 
 //costom Dom objects
 const menuIcon = document.querySelector('.menu-icon');
+const closeIcon = document.querySelector('.fa-xmark');
 const menu = document.querySelector('.menu-content');
 const error = document.querySelector('.error');
 const input = document.querySelector('#input');
@@ -9,15 +10,22 @@ const menuContent = document.querySelector('.menu-content');
 
 
 //close menu on click
-menuContent.addEventListener('click', ()=>{
+function closeMenu(){
     menu.classList.remove('showMenu')
+}
+menuContent.addEventListener('click', closeMenu)
+
+closeIcon.addEventListener('click', () =>{
+    closeMenu();
+    closeIcon.style.display = 'none';
+    menuIcon.style.display = 'block';
 })
 
 //menu drop down on click(toggle)
-menuIcon.addEventListener('click', (e) =>{
-   if(!menu.classList.contains('showMenu')){
-     menu.classList.add('showMenu')
-   }else{menu.classList.remove('showMenu')}
+menuIcon.addEventListener('click', () =>{
+    menu.classList.add('showMenu')
+    closeIcon.style.display = 'block';
+    menuIcon.style.display = 'none';
 })
 
 //email verification on click
