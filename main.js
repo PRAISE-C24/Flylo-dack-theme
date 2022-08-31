@@ -1,45 +1,48 @@
+//Selecting navbar Dom elements
+const nav = document.querySelector(".nav");
+const toggleNav = document.querySelectorAll(".fa-solid");
+const showIcon = document.querySelector(".show--nav");
+const closeIcon = document.querySelector(".close--nav");
 
-//costom Dom objects
-const menuIcon = document.querySelector('.menu-icon');
-const closeIcon = document.querySelector('.fa-xmark');
-const menu = document.querySelector('.menu-content');
-const error = document.querySelector('.error');
-const input = document.querySelector('#input');
-const btn = document.querySelector('.btn');
-const menuContent = document.querySelector('.menu-content');
+//Selecting input Dom elements
+const error = document.querySelector(".error");
+const input = document.querySelector("#input");
+const btn = document.querySelector(".btn");
 
-
-//close menu on click
-function closeMenu(){
-    menu.classList.remove('showMenu')
+//toggle navbar on click
+function openNav() {
+  nav.classList.add("showMenu");
+  closeIcon.style.display = "block";
+  showIcon.style.display = "none";
 }
-menuContent.addEventListener('click', closeMenu)
+function closeNav() {
+  nav.classList.remove("showMenu");
+  closeIcon.style.display = "none";
+  showIcon.style.display = "block";
+}
 
-closeIcon.addEventListener('click', () =>{
-    closeMenu();
-    closeIcon.style.display = 'none';
-    menuIcon.style.display = 'block';
-})
+toggleNav.forEach((icons) => {
+  icons.addEventListener("click", (e) =>
+    e.target.classList.contains("show--nav") ? openNav() : closeNav()
+  );
+});
 
-//menu drop down on click(toggle)
-menuIcon.addEventListener('click', () =>{
-    menu.classList.add('showMenu')
-    closeIcon.style.display = 'block';
-    menuIcon.style.display = 'none';
-})
+nav.addEventListener("click", closeNav);
 
 //email verification on click
-btn.addEventListener('click', ()=>{
-    const email = input.value.toLowerCase();
-    const emailRegex = /^[a-z]+\d+\@[a-z]+\.[a-z]{3}/gm;
+btn.addEventListener("click", () => {
+  const email = input.value.toLowerCase();
+  const emailRegex = /^[a-z]+\d+\@[a-z]+\.[a-z]{3}/gm;
 
-    if(email.length === 0){
-        error.textContent = "email can not be empty"
-    }else if(!emailRegex.test(email)){
-        error.textContent = "please enter a valid email address"
-    }else{error.style.color = "#3CCF4E"
-        error.textContent = 'Thank You For Your Partronage.'}
-})
+  if (email.length === 0) {
+    error.textContent = "email can not be empty";
+  } else if (!emailRegex.test(email)) {
+    error.textContent = "please enter a valid email address";
+  } else {
+    error.style.color = "#3CCF4E";
+    error.textContent = "Thank You For Your Partronage.";
+  }
+});
 
 //erasing the error msg with a click
-input.addEventListener('click', () => error.textContent = ' ')
+input.addEventListener("click", () => (error.textContent = " "));
