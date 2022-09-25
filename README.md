@@ -1,9 +1,8 @@
-
-#  Frontend Mentor -  Flylo-dack-theme
+# Frontend Mentor - Flylo-dack-theme
 
 This is my solution to the [Fylo dack theme landing page Challenge on Frontend Mentor].
 
-* Note:there are so many ways to complete this challenge, so this is my own way of completing the challenge.
+- Note:there are so many ways to complete this challenge, so this is my own way of completing the challenge.
 
 # Challenge
 
@@ -29,8 +28,8 @@ Users should be able to:
 - JavaScript
 - Mobile-first workflow
 
-
 # What I learned
+
 I learned how to make a web page with multiple features resposive.
 
 I learned a lot about the Css position propertiy.
@@ -45,4 +44,4 @@ And I also learned how to use images to add some cool features to a web page.
 
 - Name - PRAISE CHIBUZOR
 - Twitter - @PRAISE_C24
-- Frontend Mentor - @PAISE-C24 (https://www.frontendmentor.io/profile/PRAISE-C24)
+- Frontend Mentor - @PRAISE-C24 (https://www.frontendmentor.io/profile/PRAISE-C24)
